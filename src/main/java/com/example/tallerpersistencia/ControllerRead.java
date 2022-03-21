@@ -52,6 +52,9 @@ public class ControllerRead implements Initializable {
     ArrayList<Celular> persistencia = Persistencia.leerCsvEquipos();
     ObservableList<Celular> list = FXCollections.observableArrayList();
 
+    @FXML
+    private Label textAlert;
+
     public ControllerRead(){
 
     }
@@ -60,6 +63,8 @@ public class ControllerRead implements Initializable {
     void eventBuscar(ActionEvent event) {
 
         tabla.getItems().clear();
+        textAlert.setVisible(false);
+
         if(radHuella.isSelected()){
             buscarHuella(campoTexto.getText());
         }else if(radId.isSelected()){
@@ -84,6 +89,7 @@ public class ControllerRead implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        textAlert.setVisible(false);
         ToggleGroup rad = new ToggleGroup();
 
         radHuella.setToggleGroup(rad);
@@ -139,6 +145,7 @@ public class ControllerRead implements Initializable {
                 tabla.setItems(list);
             }
         }
+        if (list.size()==0)textAlert.setVisible(true);
     }
 
     public void buscarHuella(String huella){
@@ -149,7 +156,8 @@ public class ControllerRead implements Initializable {
             }
         }
 
-        addTable(resultado);
+        if(resultado.size()==0)textAlert.setVisible(true);
+        else addTable(resultado);
 
     }
 
@@ -161,7 +169,8 @@ public class ControllerRead implements Initializable {
             }
         }
 
-        addTable(resultado);
+        if(resultado.size()==0)textAlert.setVisible(true);
+        else addTable(resultado);
 
     }
 
@@ -173,7 +182,8 @@ public class ControllerRead implements Initializable {
             }
         }
 
-        addTable(resultado);
+        if(resultado.size()==0)textAlert.setVisible(true);
+        else addTable(resultado);
 
     }
 
@@ -185,7 +195,8 @@ public class ControllerRead implements Initializable {
             }
         }
 
-        addTable(resultado);
+        if(resultado.size()==0)textAlert.setVisible(true);
+        else addTable(resultado);
 
     }
 
@@ -197,7 +208,8 @@ public class ControllerRead implements Initializable {
             }
         }
 
-        addTable(resultado);
+        if(resultado.size()==0)textAlert.setVisible(true);
+        else addTable(resultado);
 
     }
 
