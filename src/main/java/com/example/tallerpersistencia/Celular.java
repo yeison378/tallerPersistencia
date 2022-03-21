@@ -1,4 +1,4 @@
-package model;
+package com.example.tallerpersistencia;
 
 public class Celular {
 
