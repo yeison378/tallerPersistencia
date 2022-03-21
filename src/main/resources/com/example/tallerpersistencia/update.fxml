@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -13,12 +14,73 @@
             <Font name="System Bold" size="25.0" />
          </font>
       </Label>
-      <TextField layoutX="14.0" layoutY="71.0" promptText="INGRESE ID" />
-      <Button layoutX="180.0" layoutY="71.0" mnemonicParsing="false" styleClass="minimizar" stylesheets="@botones.css" text="BUSCAR" textFill="WHITE">
+      <TextField layoutX="45.0" layoutY="87.0" promptText="INGRESE ID" />
+      <Button layoutX="211.0" layoutY="87.0" mnemonicParsing="false" styleClass="minimizar" stylesheets="@botones.css" text="BUSCAR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Label layoutX="273.0" layoutY="75.0" text="OBJETO RESPUESTA A LA BUSQUEDA" textFill="WHITE" />
+      <Label layoutX="293.0" layoutY="91.0" text="OBJETO RESPUESTA A LA BUSQUEDA" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <TextField layoutX="421.0" layoutY="188.0" prefHeight="26.0" prefWidth="166.0" promptText="INGRESE CAM. PRICIPAL" />
+      <TextField layoutX="233.0" layoutY="188.0" prefHeight="26.0" prefWidth="166.0" promptText="INGRESE MODELO" />
+      <TextField layoutX="609.0" layoutY="188.0" prefHeight="26.0" prefWidth="166.0" promptText="INGRESE CAM. FRONTAL" />
+      <TextField layoutX="45.0" layoutY="263.0" prefHeight="26.0" prefWidth="166.0" promptText="INGRESE SIST. OPERATIVO" />
+      <TextField layoutX="421.0" layoutY="263.0" prefHeight="26.0" prefWidth="166.0" promptText="INGRESE ALMACENAMIENTO" />
+      <TextField layoutX="233.0" layoutY="263.0" prefHeight="26.0" prefWidth="166.0" promptText="INGRESE RAM" />
+      <ComboBox layoutX="609.0" layoutY="263.0" prefHeight="26.0" prefWidth="166.0" promptText="HUELLA" />
+      <Label layoutX="234.0" layoutY="170.0" text="MODELO" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="419.0" layoutY="170.0" text="CAM. PRINCIPAL" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="607.0" layoutY="170.0" text="CAM. FRONTAL" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="170.0" text="ID" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField layoutX="45.0" layoutY="188.0" prefHeight="26.0" prefWidth="166.0" promptText="ID" />
+      <Label layoutX="234.0" layoutY="245.0" text="MODELO" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="419.0" layoutY="245.0" text="CAM. PRINCIPAL" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="607.0" layoutY="245.0" text="CAM. FRONTAL" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="245.0" text="ID" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button layoutX="364.0" layoutY="332.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="109.0" styleClass="minimizar" stylesheets="@botones.css" text="ACTUALIZAR" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label layoutX="343.0" layoutY="391.0" text="OBJETO ACTUALIZADO" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
