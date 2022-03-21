@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="central" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="818.0" styleClass="mainPane" stylesheets="@estilo.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tallerpersistencia.Controller">
+   <top>
+      <HBox prefHeight="50.0" prefWidth="734.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton fx:id="home" onAction="#eventHome" prefHeight="58.0" prefWidth="166.0" styleClass="botones" stylesheets="@estilo.css" text="HOME" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="create" onAction="#eventCreate" prefHeight="58.0" prefWidth="166.0" styleClass="botones1" stylesheets="@estilo.css" text="CREATE" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="read" onAction="#eventRead" prefHeight="58.0" prefWidth="166.0" styleClass="botones2" stylesheets="@estilo.css" text="READ" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="update" onAction="#eventUpdate" prefHeight="58.0" prefWidth="166.0" styleClass="botones3" stylesheets="@estilo.css" text="UPDATE" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="delete" onAction="#eventDelete" prefHeight="58.0" prefWidth="166.0" styleClass="botones4" stylesheets="@estilo.css" text="DELETE" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+         </children></HBox>
+   </top>
+   <center>
+      <AnchorPane fx:id="centro" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="343.0" layoutY="196.0" text="HOME" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="44.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
