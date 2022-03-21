@@ -46,13 +46,13 @@ public class Controller implements Initializable {
     @FXML
     void eventRead(ActionEvent event) {
         System.out.println("READ");
-        setPanelCenter("pagina3");
+        setPanelCenter("read");
     }
 
     @FXML
     void eventUpdate(ActionEvent event) {
         System.out.println("UPDATE");
-        setPanelCenter("pagina4");
+        setPanelCenter("update");
     }
 
     @FXML

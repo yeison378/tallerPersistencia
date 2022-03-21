@@ -16,12 +16,11 @@ import java.util.ResourceBundle;
 public class ControllerCreate implements Initializable {
 
 
+    @FXML
+    private TextField almacenamiento, camFrontal, camPrincipal, modelo, os, ram;
 
     @FXML
-    private TextField almacenamiento,camFrontal,camPrincipal,modelo,os,ram;
-
-    @FXML
-    private Button btnAgregar,btnCancelar;
+    private Button btnAgregar, btnCancelar;
 
     @FXML
     private TableView<Celular> tabla;
@@ -52,27 +51,24 @@ public class ControllerCreate implements Initializable {
 
     @FXML
     private ComboBox<String> huellaBox;
-    ArrayList<Celular> persistencia = new ArrayList<>();
+    ArrayList<Celular> persistencia = Persistencia.leerCsvEquipos();
 
     ObservableList<Celular> list = FXCollections.observableArrayList();
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        colModelo.setCellValueFactory(new PropertyValueFactory<Celular,String>("modelo"));
-        colCamPrincipal.setCellValueFactory(new PropertyValueFactory<Celular,String>("camaraPrincipal"));
-        colCamFrontal.setCellValueFactory(new PropertyValueFactory<Celular,String>("camaraFrontal"));
-        colOs.setCellValueFactory(new PropertyValueFactory<Celular,String>("sistemaOperativo"));
-        colRam.setCellValueFactory(new PropertyValueFactory<Celular,String>("ram"));
-        colAlmacenamiento.setCellValueFactory(new PropertyValueFactory<Celular,String>("almacenamiento"));
-        colHuella.setCellValueFactory(new PropertyValueFactory<Celular,String>("huella"));
-        colId.setCellValueFactory(new PropertyValueFactory<Celular,String>("id"));
+        colModelo.setCellValueFactory(new PropertyValueFactory<Celular, String>("modelo"));
+        colCamPrincipal.setCellValueFactory(new PropertyValueFactory<Celular, String>("camaraPrincipal"));
+        colCamFrontal.setCellValueFactory(new PropertyValueFactory<Celular, String>("camaraFrontal"));
+        colOs.setCellValueFactory(new PropertyValueFactory<Celular, String>("sistemaOperativo"));
+        colRam.setCellValueFactory(new PropertyValueFactory<Celular, String>("ram"));
+        colAlmacenamiento.setCellValueFactory(new PropertyValueFactory<Celular, String>("almacenamiento"));
+        colHuella.setCellValueFactory(new PropertyValueFactory<Celular, String>("huella"));
+        colId.setCellValueFactory(new PropertyValueFactory<Celular, String>("id"));
 
-        huellaBox.setItems(FXCollections.observableArrayList("Si","No"));
+        huellaBox.setItems(FXCollections.observableArrayList("Si", "No"));
 
-        persistencia.add(new Celular("1","samsung","android","16 Px","23","23","345","si"));
-        persistencia.add(new Celular("2","samsung","android","16 Px","23","23","345","si"));
-    Persistencia.escribirEquipos(persistencia);
         tabla.setItems(list);
         agregaraTabla();
     }
@@ -80,9 +76,10 @@ public class ControllerCreate implements Initializable {
 
     @FXML
     void eventAgregar(ActionEvent event) {
-        int id = Integer.parseInt(persistencia.get(persistencia.size()-1).getId())+1;
-        Celular celular = new Celular(id+"",modelo.getText(),os.getText(),camPrincipal.getText(),camFrontal.getText(),ram.getText(),almacenamiento.getText(),huellaBox.getValue());
+        int id = Integer.parseInt(persistencia.get(persistencia.size() - 1).getId()) + 1;
+        Celular celular = new Celular(id + "", modelo.getText(), os.getText(), camPrincipal.getText(), camFrontal.getText(), ram.getText(), almacenamiento.getText(), huellaBox.getValue());
         persistencia.add(celular);
+        Persistencia.escribirEquipos(persistencia);
         list.add(celular);
         tabla.setItems(list);
     }
@@ -98,8 +95,8 @@ public class ControllerCreate implements Initializable {
 
     }
 
-    public void agregaraTabla(){
-        for (Celular c:persistencia) {
+    public void agregaraTabla() {
+        for (Celular c : persistencia) {
             list.add(c);
             tabla.setItems(list);
         }
