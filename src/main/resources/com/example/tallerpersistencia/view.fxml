@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -11,30 +12,45 @@
    <top>
       <HBox prefHeight="50.0" prefWidth="734.0" BorderPane.alignment="CENTER">
          <children>
-            <JFXButton fx:id="home" onAction="#eventHome" prefHeight="58.0" prefWidth="166.0" styleClass="botones" stylesheets="@estilo.css" text="HOME" textFill="WHITE">
+            <JFXButton fx:id="home" graphicTextGap="15.0" onAction="#eventHome" prefHeight="58.0" prefWidth="166.0" styleClass="botones" stylesheets="@estilo.css" text="HOME" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="20" />
+               </graphic>
             </JFXButton>
-            <JFXButton fx:id="create" onAction="#eventCreate" prefHeight="58.0" prefWidth="166.0" styleClass="botones1" stylesheets="@estilo.css" text="CREATE" textFill="WHITE">
+            <JFXButton fx:id="create" graphicTextGap="15.0" onAction="#eventCreate" prefHeight="58.0" prefWidth="166.0" styleClass="botones1" stylesheets="@estilo.css" text="CREATE" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="20" />
+               </graphic>
             </JFXButton>
-            <JFXButton fx:id="read" onAction="#eventRead" prefHeight="58.0" prefWidth="166.0" styleClass="botones2" stylesheets="@estilo.css" text="READ" textFill="WHITE">
+            <JFXButton fx:id="read" graphicTextGap="15.0" onAction="#eventRead" prefHeight="58.0" prefWidth="166.0" styleClass="botones2" stylesheets="@estilo.css" text="READ" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="20" />
+               </graphic>
             </JFXButton>
-            <JFXButton fx:id="update" onAction="#eventUpdate" prefHeight="58.0" prefWidth="166.0" styleClass="botones3" stylesheets="@estilo.css" text="UPDATE" textFill="WHITE">
+            <JFXButton fx:id="update" graphicTextGap="15.0" onAction="#eventUpdate" prefHeight="58.0" prefWidth="166.0" styleClass="botones3" stylesheets="@estilo.css" text="UPDATE" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" size="20" />
+               </graphic>
             </JFXButton>
-            <JFXButton fx:id="delete" onAction="#eventDelete" prefHeight="58.0" prefWidth="166.0" styleClass="botones4" stylesheets="@estilo.css" text="DELETE" textFill="WHITE">
+            <JFXButton fx:id="delete" graphicTextGap="15.0" onAction="#eventDelete" prefHeight="58.0" prefWidth="166.0" styleClass="botones4" stylesheets="@estilo.css" text="DELETE" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="TIMES_CIRCLE_ALT" size="20" />
+               </graphic>
             </JFXButton>
          </children></HBox>
    </top>
