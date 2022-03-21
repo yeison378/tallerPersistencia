@@ -58,7 +58,7 @@ public class Controller implements Initializable {
     @FXML
     void eventDelete(ActionEvent event) {
         System.out.println("DELETE");
-        setPanelCenter("pagina5");
+        setPanelCenter("delete");
     }
 
     private void setPanelCenter(String panel){
