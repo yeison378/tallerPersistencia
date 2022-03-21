@@ -8,37 +8,37 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="457.6" prefWidth="818.4" styleClass="mainPane" stylesheets="@estilo.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="457.6" prefWidth="818.4" styleClass="mainPane" stylesheets="@estilo.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tallerpersistencia.ControllerCreate">
    <children>
       <Label layoutX="14.0" layoutY="14.0" text="CREATE" textFill="WHITE">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
       </Label>
-      <TextField layoutX="70.0" layoutY="94.0" promptText="Modelo" />
-      <TextField layoutX="246.0" layoutY="94.0" promptText="Camara principal" />
-      <TextField layoutX="422.0" layoutY="94.0" promptText="Camara frontal" />
-      <TextField layoutX="598.0" layoutY="94.0" promptText="Sistema operativo" />
-      <TextField layoutX="70.0" layoutY="142.0" promptText="Ram" />
-      <TextField layoutX="246.0" layoutY="142.0" promptText="Almacenamiento" />
-      <TextField layoutX="422.0" layoutY="142.0" promptText="Huella" />
-      <Button layoutX="282.0" layoutY="194.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="114.0" styleClass="minimizar" stylesheets="@botones.css" text="AGREGAR" textFill="WHITE">
+      <TextField fx:id="modelo" layoutX="70.0" layoutY="94.0" promptText="Modelo" />
+      <TextField fx:id="camPrincipal" layoutX="246.0" layoutY="94.0" promptText="Camara principal" />
+      <TextField fx:id="camFrontal" layoutX="422.0" layoutY="94.0" promptText="Camara frontal" />
+      <TextField fx:id="os" layoutX="598.0" layoutY="94.0" promptText="Sistema operativo" />
+      <TextField fx:id="ram" layoutX="70.0" layoutY="142.0" promptText="Ram" />
+      <TextField fx:id="almacenamiento" layoutX="246.0" layoutY="142.0" promptText="Almacenamiento" />
+      <TextField fx:id="huella" layoutX="422.0" layoutY="142.0" promptText="Huella" />
+      <Button fx:id="btnAgregar" layoutX="282.0" layoutY="194.0" mnemonicParsing="false" onAction="#eventAgregar" prefHeight="26.0" prefWidth="114.0" styleClass="minimizar" stylesheets="@botones.css" text="AGREGAR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <TableView layoutX="22.0" layoutY="242.0" prefHeight="192.0" prefWidth="774.0">
+      <TableView fx:id="tabla" layoutX="22.0" layoutY="242.0" prefHeight="192.0" prefWidth="774.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="ID" />
-          <TableColumn prefWidth="137.5999526977539" text="Modelo" />
-            <TableColumn prefWidth="105.60003662109375" text="Cam. principal" />
-            <TableColumn prefWidth="92.79998779296875" text="Cam. frontal" />
-            <TableColumn prefWidth="116.79995727539062" text="S. operativo" />
-            <TableColumn prefWidth="70.39996337890625" text="Ram" />
-            <TableColumn prefWidth="112.79998779296875" text="Almacenamiento" />
-            <TableColumn prefWidth="64.800048828125" text="Huella" />
+          <TableColumn fx:id="colId" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="colModelo" prefWidth="137.5999526977539" text="Modelo" />
+            <TableColumn fx:id="colCamPrincipal" prefWidth="105.60003662109375" text="Cam. principal" />
+            <TableColumn fx:id="colCamFrontal" prefWidth="92.79998779296875" text="Cam. frontal" />
+            <TableColumn fx:id="colOs" prefWidth="116.79995727539062" text="S. operativo" />
+            <TableColumn fx:id="colRam" prefWidth="70.39996337890625" text="Ram" />
+            <TableColumn fx:id="colAlmacenamiento" prefWidth="112.79998779296875" text="Almacenamiento" />
+            <TableColumn fx:id="colHuella" prefWidth="64.800048828125" text="Huella" />
         </columns>
       </TableView>
-      <Button layoutX="446.0" layoutY="194.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="114.0" styleClass="cerrar" stylesheets="@botones.css" text="CANCELAR" textFill="WHITE">
+      <Button fx:id="btnCancelar" layoutX="446.0" layoutY="194.0" mnemonicParsing="false" onAction="#eventCancelar" prefHeight="26.0" prefWidth="114.0" styleClass="cerrar" stylesheets="@botones.css" text="CANCELAR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
