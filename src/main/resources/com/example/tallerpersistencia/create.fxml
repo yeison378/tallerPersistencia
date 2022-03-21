@@ -22,7 +22,6 @@
       <TextField fx:id="os" layoutX="598.0" layoutY="94.0" promptText="Sistema operativo" />
       <TextField fx:id="ram" layoutX="70.0" layoutY="142.0" promptText="Ram" />
       <TextField fx:id="almacenamiento" layoutX="246.0" layoutY="142.0" promptText="Almacenamiento" />
-      <TextField fx:id="huella" layoutX="422.0" layoutY="142.0" promptText="Huella" />
       <Button fx:id="btnAgregar" layoutX="282.0" layoutY="194.0" mnemonicParsing="false" onAction="#eventAgregar" prefHeight="26.0" prefWidth="114.0" styleClass="minimizar" stylesheets="@botones.css" text="AGREGAR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -43,6 +42,6 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <ComboBox fx:id="huellaBox" layoutX="598.0" layoutY="142.0" prefWidth="150.0" />
+      <ComboBox fx:id="huellaBox" layoutX="422.0" layoutY="142.0" prefWidth="150.0" promptText="Huella" visibleRowCount="2" />
    </children>
 </AnchorPane>

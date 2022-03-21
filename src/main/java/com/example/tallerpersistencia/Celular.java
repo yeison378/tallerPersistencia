@@ -11,6 +11,10 @@ public class Celular {
     private String almacenamiento;
     private String huella;
 
+    public Celular(){
+
+    }
+
     public Celular(String id, String modelo, String sistemaOperativo, String camaraPrincipal, String camaraFrontal, String ram, String almacenamiento, String huella) {
         this.id = id;
         this.modelo = modelo;

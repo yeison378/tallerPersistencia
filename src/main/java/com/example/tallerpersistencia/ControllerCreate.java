@@ -6,13 +6,11 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class ControllerCreate implements Initializable {
@@ -20,7 +18,7 @@ public class ControllerCreate implements Initializable {
 
 
     @FXML
-    private TextField almacenamiento,camFrontal,camPrincipal,huella,modelo,os,ram;
+    private TextField almacenamiento,camFrontal,camPrincipal,modelo,os,ram;
 
     @FXML
     private Button btnAgregar,btnCancelar;
@@ -52,7 +50,12 @@ public class ControllerCreate implements Initializable {
     @FXML
     private TableColumn<Celular, String> colRam;
 
+    @FXML
+    private ComboBox<String> huellaBox;
+    ArrayList<Celular> persistencia = new ArrayList<>();
+
     ObservableList<Celular> list = FXCollections.observableArrayList();
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -64,14 +67,22 @@ public class ControllerCreate implements Initializable {
         colAlmacenamiento.setCellValueFactory(new PropertyValueFactory<Celular,String>("almacenamiento"));
         colHuella.setCellValueFactory(new PropertyValueFactory<Celular,String>("huella"));
         colId.setCellValueFactory(new PropertyValueFactory<Celular,String>("id"));
-        System.out.println("error");
+
+        huellaBox.setItems(FXCollections.observableArrayList("Si","No"));
+
+        persistencia.add(new Celular("1","samsung","android","16 Px","23","23","345","si"));
+        persistencia.add(new Celular("2","samsung","android","16 Px","23","23","345","si"));
+    Persistencia.escribirEquipos(persistencia);
         tabla.setItems(list);
+        agregaraTabla();
     }
 
 
     @FXML
     void eventAgregar(ActionEvent event) {
-        Celular celular = new Celular("1",modelo.getText(),os.getText(),camPrincipal.getText(),camFrontal.getText(),ram.getText(),almacenamiento.getText(),huella.getText());
+        int id = Integer.parseInt(persistencia.get(persistencia.size()-1).getId())+1;
+        Celular celular = new Celular(id+"",modelo.getText(),os.getText(),camPrincipal.getText(),camFrontal.getText(),ram.getText(),almacenamiento.getText(),huellaBox.getValue());
+        persistencia.add(celular);
         list.add(celular);
         tabla.setItems(list);
     }
@@ -81,10 +92,17 @@ public class ControllerCreate implements Initializable {
         almacenamiento.setText("");
         camFrontal.setText("");
         camPrincipal.setText("");
-        huella.setText("");
         modelo.setText("");
         os.setText("");
         ram.setText("");
+
+    }
+
+    public void agregaraTabla(){
+        for (Celular c:persistencia) {
+            list.add(c);
+            tabla.setItems(list);
+        }
     }
 
 }
